@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - LINKBIO_MONGODB_URI=mongodb://mongo:27017
+      - LINKBIO_MONGODB_DATABASE=linkbio
+      - LINKBIO_SERVER_ADDRESS=:8080
+      - LINKBIO_CLEANUP_INTERVAL=15m
+    depends_on:
+      - mongo
+    networks:
+      - link-bio-network
+
+  mongo:
+    image: mongo:5
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - link-bio-network
+
+networks:
+  link-bio-network:
+    driver: bridge
+
+volumes:
+  mongo-data:
