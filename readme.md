@@ -28,8 +28,8 @@ A high-performance REST API for a Link In Bio management system built with Golan
 
 1. Clone the repository:
    ```
-   git clone https://github.com/ammar022/take-home-assignment.git
-   cd link-bio-api
+   git clone https://github.com/Ammar022/take-home-assignment.git
+   cd take-home-assignment
    ```
 
 2. Start the application:
@@ -43,8 +43,8 @@ A high-performance REST API for a Link In Bio management system built with Golan
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/link-bio-api.git
-   cd link-bio-api
+   git clone https://github.com/Ammar022/take-home-assignment.git
+   cd take-home-assignment
    ```
 
 2. Install dependencies:
@@ -112,7 +112,3 @@ The application includes several optimizations for high-traffic scenarios:
 ```
 go test -v ./tests/...
 ```
-
-## License
-
-MIT
