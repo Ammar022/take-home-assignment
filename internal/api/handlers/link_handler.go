@@ -1,4 +1,3 @@
-// internal/api/handlers/link_handler.go
 package handlers
 
 import (
@@ -22,7 +21,6 @@ func NewLinkHandler(linkService *service.LinkService) *LinkHandler {
 	}
 }
 
-// internal/api/handlers/link_handler.go (continued)
 // Create handles creating a new link
 func (h *LinkHandler) Create(c *gin.Context) {
 	var dto models.LinkCreateDTO
@@ -112,5 +110,3 @@ func (h *LinkHandler) Delete(c *gin.Context) {
 
 	c.Status(http.StatusNoContent)
 }
-
-

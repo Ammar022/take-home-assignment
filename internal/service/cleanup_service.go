@@ -2,6 +2,7 @@ package service
 
 import (
 	"context"
+	"log"
 	"take-home-assignment/internal/repo"
 	"time"
 )
@@ -41,11 +42,11 @@ func (s *CleanupService) cleanupExpiredLinks(ctx context.Context) {
 
 	count, err := s.linkRepo.DeleteExpired(cleanupCtx)
 	if err != nil {
-		// Log error (implement proper logging)
+		log.Println("Failed to clean up expired links:", err)
 		return
 	}
 
 	if count > 0 {
-		// Log cleanup results (implement proper logging)
+		log.Printf("Cleaned up %d expired links", count)
 	}
 }

@@ -36,4 +36,3 @@ func (rl *RateLimiter) Middleware() gin.HandlerFunc {
 		c.Next()
 	}
 }
-

@@ -39,7 +39,7 @@ func main() {
 	// Start background cleanup worker
 	cleanupCtx, cleanupCancel := context.WithCancel(context.Background())
 	cleanupService := service.NewCleanupService(linkRepo)
-	go cleanupService.StartPeriodicCleanup(cleanupCtx, time.Hour*24)
+	go cleanupService.StartPeriodicCleanup(cleanupCtx, time.Hour*24) // Run every 24 hours
 
 	// Initialize HTTP router
 	router := api.SetupRouter(linkService, visitService)

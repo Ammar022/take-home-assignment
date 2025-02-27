@@ -31,4 +31,3 @@ type LinkUpdateDTO struct {
 	URL       string    `json:"url" binding:"omitempty,url"`
 	ExpiresAt time.Time `json:"expiresAt"`
 }
-

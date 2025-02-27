@@ -8,7 +8,6 @@ import (
 )
 
 // AuthMiddleware is a mock authentication middleware
-// In a real app, this would validate JWT tokens or other auth mechanisms
 func AuthMiddleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		// Get the Authorization header
@@ -34,7 +33,7 @@ func AuthMiddleware() gin.HandlerFunc {
 		
 		// Mock user ID - in a real app, this would be extracted from the token
 		// For simplicity, we'll just use a fixed value
-		c.Set("userId", "mock-user-123")
+		c.Set("userId", "ammar-123")
 		
 		c.Next()
 	}

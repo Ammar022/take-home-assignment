@@ -1,4 +1,3 @@
-// internal/service/visit_service.go
 package service
 
 import (

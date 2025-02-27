@@ -1,4 +1,3 @@
-// tests/unit/link_service_test.go
 package unit
 
 import (

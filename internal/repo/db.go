@@ -53,5 +53,3 @@ func (m *MongoDB) Collection(name string) *mongo.Collection {
 func (m *MongoDB) Close(ctx context.Context) error {
 	return m.client.Disconnect(ctx)
 }
-
-
