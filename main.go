@@ -3,6 +3,7 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -22,6 +23,8 @@ func main() {
 		log.Fatalf("Failed to load configuration: %v", err)
 	}
 
+	fmt.Println("Configuration loaded successfully")
+
 	// Connect to MongoDB
 	db, err := repo.NewMongoDBConnection(cfg.MongoDB.URI, cfg.MongoDB.Database)
 	if err != nil {
@@ -35,7 +38,7 @@ func main() {
 	// Initialize services
 	linkService := service.NewLinkService(linkRepo)
 	visitService := service.NewVisitService(visitRepo, linkRepo)
-	
+
 	// Start background cleanup worker
 	cleanupCtx, cleanupCancel := context.WithCancel(context.Background())
 	cleanupService := service.NewCleanupService(linkRepo)
